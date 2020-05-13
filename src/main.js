@@ -3,6 +3,13 @@ import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import App from './App.vue'
+
+// mock开关
+const mock = true
+if(mock){
+  require('./mock/api')
+}
+
 // axios 基础参数设置
 axios.defaults.baseURL = '/api' // 根据跨域方式设置（该项目用的是代理方式解决跨域）
                                 // 如果是CORS跨域，这里可能是'http://imooc.com'

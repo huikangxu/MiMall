@@ -5,11 +5,19 @@
 </template>
 
 <script>
-// import axios from 'axios'
-// import jsonp from 'jsonp'
 
 export default {
-  name: 'App'
+  name: 'App',
+  data () {
+    return {
+      res: {}
+    }
+  },
+  mounted () {
+    this.axios.get('/user/login').then((res)=>{
+      this.res = res
+    })
+  }
 }
 </script>
 
